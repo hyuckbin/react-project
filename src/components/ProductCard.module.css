@@ -1,22 +1,45 @@
 .cardContainer {
-  border: 1px solid red;
-  background-color: red;
+  background-color: rgba(255, 229, 236, 0.98);
+  border-radius: 1rem;
+  overflow: hidden;
   margin-bottom: 1rem;
-  width: 35rem;
+  width: 30rem;
+  height: 15rem;
 
   display: grid;
   grid-template-columns: 40% 60%;
 }
 
+.cardContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .productInfo {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+}
+
+.productInfo h3 {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.price::after {
+  content: "€";
+  margin-left: 0.2rem;
 }
 
 .buttons {
   display: flex;
+
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -26,15 +49,30 @@
   align-items: center;
   width: 1.6rem;
   height: 1.6rem;
+  color: #fff;
+  background-color: #444;
 
   border: none;
   border-radius: 50%;
 }
 
+.buttons p {
+  font-size: 1.2rem;
+}
+
 .remove {
   display: inline-block;
   padding: 0.2rem 0.8rem;
-
   border: none;
   border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.total {
+  font-size: 1.2rem;
+}
+
+.total::after {
+  content: "€";
+  margin-left: 0.2rem;
 }

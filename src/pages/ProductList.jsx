@@ -18,12 +18,27 @@ const ProductList = () => {
     getProducts();
   }, []);
 
+  const putProduct = async (updatedProduct) => {
+    await axios.put(`${url}/${updatedProduct.id}`, updatedProduct);
+    getProducts();
+  };
+
+  const deleteProduct = async (id) => {
+    await axios.delete(`${url}/${id}`);
+    getProducts();
+  };
+
   return (
     <div className={styles.container}>
       <MyNavbar />
       <div className={styles.cards}>
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            putProduct={putProduct}
+            deleteProduct={deleteProduct}
+          />
         ))}
       </div>
     </div>
