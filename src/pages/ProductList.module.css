@@ -1,8 +1,8 @@
 .container {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
-    url("../assets/img3.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("../assets/img5.jpg");
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -12,6 +12,7 @@
 .cards {
   padding: 3rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 3rem;
 }

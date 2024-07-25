@@ -1,11 +1,11 @@
 import styles from "./ProductCard.module.css";
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 
 const ProductCard = ({
   product,
   putProduct,
-  updatedProduct,
   deleteProduct,
+  updateProductAmount,
 }) => {
   const { name, price, amount, id, image } = product;
 
@@ -46,13 +46,18 @@ const ProductCard = ({
     dispatch({ type: "dec" });
   };
 
+  useEffect(() => {
+    updateProductAmount(id, state.amount);
+    putProduct({ ...product, amount: state.amount });
+  }, [state.amount]);
+
   return (
     <div className={styles.cardContainer}>
       <img src={image} alt="productImage" />
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p className={styles.price}>{price}</p>
-        <div className={styles.buttons}>
+        <div className={styles.amountContainer}>
           <button onClick={dec}>-</button>
           <p>{Number(state.amount)}</p>
           <button onClick={inc}>+</button>
