@@ -1,0 +1,16 @@
+.container {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+    url("../assets/img3.jpg");
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+.cards {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

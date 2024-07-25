@@ -1,1 +1,40 @@
-rafce
+.cardContainer {
+  border: 1px solid red;
+  background-color: red;
+  margin-bottom: 1rem;
+  width: 35rem;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border: none;
+  border-radius: 50%;
+}
+
+.remove {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+
+  border: none;
+  border-radius: 0.5rem;
+}
