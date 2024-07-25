@@ -40,18 +40,20 @@ const ProductList = () => {
   return (
     <div className={styles.container}>
       <MyNavbar />
-      <div className={styles.cards}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            putProduct={putProduct}
-            deleteProduct={deleteProduct}
-            updateProductAmount={updateProductAmount}
-          />
-        ))}
+      <div className={styles.wrapper}>
+        <div className={styles.cards}>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              putProduct={putProduct}
+              deleteProduct={deleteProduct}
+              updateProductAmount={updateProductAmount}
+            />
+          ))}
+        </div>
+        <TotalCard products={products} />
       </div>
-      <TotalCard products={products} />
     </div>
   );
 };

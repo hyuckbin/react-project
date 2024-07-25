@@ -2,17 +2,25 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
     url("../assets/img5.jpg");
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
   background-attachment: fixed;
 }
 
-.cards {
-  padding: 3rem;
+.wrapper {
   display: flex;
+  align-items: start;
   flex-wrap: wrap;
-  align-items: center;
+  padding: 5rem;
   gap: 3rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
