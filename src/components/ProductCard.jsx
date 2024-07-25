@@ -7,7 +7,7 @@ const ProductCard = ({
   updatedProduct,
   deleteProduct,
 }) => {
-  const { name, price, amount, id } = product;
+  const { name, price, amount, id, image } = product;
 
   const initialState = {
     amount: amount || 1,
@@ -57,10 +57,7 @@ const ProductCard = ({
 */
   return (
     <div className={styles.cardContainer}>
-      <img
-        src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSQu1Hj6vUPhMPvHbjdiVnO9vbh6moWytSkaaqN0AkTDiHinFRIgzq1xv8M9UccJqPWEetr9qSN0rv1hnbE2H7dmWGZJhGRilBmd6Z7uG_jhH_jWZr9uepA1Q"
-        alt="productImage"
-      />
+      <img src={image} alt="productImage" />
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p className={styles.price}>{price}</p>

@@ -3,12 +3,21 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import MyNavbar from "./MyNavbar";
 import { useState } from "react";
-const ProductForm = () => {
+const ProductForm = ({ postProduct }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [amount, setAmount] = useState(0);
   const [url, setUrl] = useState("");
 
+  const handleSubmit = () => {
+    const newProduct = {
+      name: name,
+      image: url,
+      price: price,
+      amount: amount,
+    };
+    postProduct(newProduct);
+  };
   return (
     <div className={styles.container}>
       <MyNavbar />
@@ -60,7 +69,9 @@ const ProductForm = () => {
               />
             </InputGroup>
           </Form>
-          <button type="submit">Save To New Product</button>
+          <button type="submit" onClick={handleSubmit}>
+            Save To New Product
+          </button>
         </div>
       </section>
     </div>
