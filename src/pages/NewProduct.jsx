@@ -23,7 +23,11 @@ const NewProduct = () => {
 
   return (
     <div>
-      <ProductForm products={products} postProduct={postProduct} />
+      <ProductForm
+        products={products}
+        postProduct={postProduct}
+        getProducts={getProducts}
+      />
     </div>
   );
 };

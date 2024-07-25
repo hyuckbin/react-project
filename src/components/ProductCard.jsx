@@ -46,15 +46,6 @@ const ProductCard = ({
     dispatch({ type: "dec" });
   };
 
-  /*
-  useEffect(() => {
-    const updatedProduct = {
-      ...product,
-      amount: state.amount,
-    };
-    debouncedPutProduct(updatedProduct);
-  }, [state.amount, product, debouncedPutProduct]);
-*/
   return (
     <div className={styles.cardContainer}>
       <img src={image} alt="productImage" />
@@ -63,7 +54,7 @@ const ProductCard = ({
         <p className={styles.price}>{price}</p>
         <div className={styles.buttons}>
           <button onClick={dec}>-</button>
-          <p>{state.amount}</p>
+          <p>{Number(state.amount)}</p>
           <button onClick={inc}>+</button>
         </div>
         <button className={styles.remove} onClick={() => deleteProduct(id)}>

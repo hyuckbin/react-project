@@ -3,20 +3,33 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import MyNavbar from "./MyNavbar";
 import { useState } from "react";
-const ProductForm = ({ postProduct }) => {
+import { useNavigate } from "react-router-dom";
+
+const ProductForm = ({ postProduct, getProducts }) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [amount, setAmount] = useState(0);
   const [url, setUrl] = useState("");
 
-  const handleSubmit = () => {
-    const newProduct = {
-      name: name,
-      image: url,
-      price: price,
-      amount: amount,
-    };
-    postProduct(newProduct);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name || !url || !price || !amount) {
+      alert("Please fill all the fields");
+    }
+
+    if (name && url && price && amount) {
+      const newProduct = {
+        name: name,
+        image: url,
+        price: Number(price),
+        amount: Number(amount),
+      };
+      postProduct(newProduct);
+      getProducts();
+      navigate("/productlist");
+    }
   };
   return (
     <div className={styles.container}>
@@ -31,6 +44,7 @@ const ProductForm = ({ postProduct }) => {
                 placeholder="Please enter product name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                required
               />
             </Form.Group>
 
@@ -41,6 +55,7 @@ const ProductForm = ({ postProduct }) => {
                 placeholder="0"
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+                required
               />
             </Form.Group>
 
@@ -51,6 +66,7 @@ const ProductForm = ({ postProduct }) => {
                 placeholder="0"
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
+                required
               />
             </Form.Group>
 
@@ -66,6 +82,7 @@ const ProductForm = ({ postProduct }) => {
                 aria-describedby="basic-addon3"
                 onChange={(e) => setUrl(e.target.value)}
                 value={url}
+                required
               />
             </InputGroup>
           </Form>
