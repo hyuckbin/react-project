@@ -1,7 +1,7 @@
 .container {
   background: linear-gradient(
       to right bottom,
-      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.3)
     ),
     url("../assets/img1.jpg");
@@ -15,8 +15,10 @@
 
 .home {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
   height: 70vh;
 
   color: #fff;
@@ -27,4 +29,22 @@
   text-align: center;
   line-height: 1.5;
   font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons button {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ffd0a4;
+  transition: all 0.5s;
+}
+
+.buttons button:hover {
+  background-color: #e6b78b;
 }
