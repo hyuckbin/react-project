@@ -9,7 +9,8 @@
   transition: all 0.5s;
 }
 
-.navlink:hover {
+.navlink:hover,
+.navlin:active {
   border-radius: 0.5rem;
-  color: #ffcb9a;
+  color: #ffcb9a !important;
 }

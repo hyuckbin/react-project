@@ -2,26 +2,38 @@ import { NavLink } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "./MyNavbar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const MyNavbar = () => {
+  const navigate = useNavigate();
   return (
     <Navbar expand="lg" className={styles.navbar}>
       <NavLink to="/">React-Bootstrap</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          <NavLink to="/" className={styles.navlink}>
+          <Nav.Link onClick={() => navigate("/")} className={styles.navlink}>
             Home
-          </NavLink>
-          <NavLink to="/newproduct" className={styles.navlink}>
+          </Nav.Link>
+          <Nav.Link
+            onClick={() => navigate("/newproduct")}
+            className={styles.navlink}
+          >
             New Product
-          </NavLink>
-          <NavLink to="/productlist" className={styles.navlink}>
+          </Nav.Link>
+          <Nav.Link
+            onClick={() => navigate("/productlist")}
+            className={styles.navlink}
+          >
             Product List
-          </NavLink>
-          <NavLink to="/about" className={styles.navlink}>
+          </Nav.Link>
+
+          <Nav.Link
+            onClick={() => navigate("/about")}
+            className={styles.navlink}
+          >
             About
-          </NavLink>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
