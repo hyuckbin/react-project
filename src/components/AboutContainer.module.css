@@ -1,0 +1,14 @@
+.cardContainer {
+  max-width: 30rem;
+  min-width: 25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  background-color: #ffffffc2;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
