@@ -8,7 +8,7 @@ const MyNavbar = () => {
   const navigate = useNavigate();
   return (
     <Navbar expand="lg" className={styles.navbar}>
-      <NavLink to="/">React-Bootstrap</NavLink>
+      <NavLink to="/">Store-Management</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
