@@ -38,7 +38,7 @@ The primary objective of this project is to develop a comprehensive product mana
 │    │       └── ProductList.module.css
 │    │       └── UpdateProduct.jsx
 │    │       └── UpdateProduct.module.css
-│    ├── pages
+│    ├── router
 │    │       └── AppRouter.jsx
 │    │       
 │    ├── App.js
@@ -83,6 +83,8 @@ The primary objective of this project is to develop a comprehensive product mana
   - **DELETE**: Remove a product from the mock API.
 - **React Bootstrap**: Used for responsive design and UI components.
 - **Modular CSS**: Utilized `module.css` files for component-level styling.
+
+
  
 
 ### At the end of the project, will be able to;
