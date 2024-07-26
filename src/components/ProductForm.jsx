@@ -6,31 +6,24 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ProductForm = ({ postProduct, getProducts }) => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
-  const [amount, setAmount] = useState(0);
-  const [url, setUrl] = useState("");
-
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!name || !url || !price || !amount) {
-      alert("Please fill all the fields");
-    }
-
-    if (name && url && price && amount) {
-      const newProduct = {
-        name: name,
-        image: url,
-        price: Number(price),
-        amount: Number(amount),
-      };
-      postProduct(newProduct);
-      getProducts();
-      navigate("/productlist");
-    }
+  const initialState = {
+    name: "",
+    price: 0,
+    amount: 0,
+    image: "",
+    dampingRate: 0.8,
   };
+
+  const [newProduct, setNewProduct] = useState(initialState);
+
+  const handleSubmit = () => {
+    postProduct(newProduct);
+    navigate("/productlist");
+    setNewProduct(initialState);
+  };
+
   return (
     <div className={styles.container}>
       <MyNavbar />
@@ -42,8 +35,10 @@ const ProductForm = ({ postProduct, getProducts }) => {
               <Form.Control
                 type="text"
                 placeholder="Please enter product name"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
+                value={newProduct.name}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, name: e.target.value })
+                }
                 required
               />
             </Form.Group>
@@ -53,8 +48,10 @@ const ProductForm = ({ postProduct, getProducts }) => {
               <Form.Control
                 type="number"
                 placeholder="0"
-                onChange={(e) => setPrice(e.target.value)}
-                value={price}
+                value={newProduct.price}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, price: e.target.value })
+                }
                 required
               />
             </Form.Group>
@@ -64,8 +61,13 @@ const ProductForm = ({ postProduct, getProducts }) => {
               <Form.Control
                 type="number"
                 placeholder="0"
-                onChange={(e) => setAmount(e.target.value)}
-                value={amount}
+                value={newProduct.amount}
+                onChange={(e) =>
+                  setNewProduct({
+                    ...newProduct,
+                    amount: Number(e.target.value),
+                  })
+                }
                 required
               />
             </Form.Group>
@@ -80,8 +82,10 @@ const ProductForm = ({ postProduct, getProducts }) => {
               <Form.Control
                 id="basic-url"
                 aria-describedby="basic-addon3"
-                onChange={(e) => setUrl(e.target.value)}
-                value={url}
+                value={newProduct.url}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, image: e.target.value })
+                }
                 required
               />
             </InputGroup>

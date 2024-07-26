@@ -1,12 +1,7 @@
 import styles from "./ProductCard.module.css";
 import React, { useReducer, useEffect } from "react";
 
-const ProductCard = ({
-  product,
-  putProduct,
-  deleteProduct,
-  updateProductAmount,
-}) => {
+const ProductCard = ({ product, putProduct, deleteProduct }) => {
   const { name, price, amount, id, image } = product;
 
   const initialState = {
@@ -47,7 +42,6 @@ const ProductCard = ({
   };
 
   useEffect(() => {
-    updateProductAmount(id, state.amount);
     putProduct({ ...product, amount: state.amount });
   }, [state.amount]);
 

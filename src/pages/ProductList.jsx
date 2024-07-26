@@ -19,22 +19,14 @@ const ProductList = () => {
     getProducts();
   }, []);
 
-  const putProduct = async (updatedProduct) => {
-    await axios.put(`${url}/${updatedProduct.id}`, updatedProduct);
-    getProducts();
-  };
-
   const deleteProduct = async (id) => {
     await axios.delete(`${url}/${id}`);
     getProducts();
   };
 
-  const updateProductAmount = (id, newAmount) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === id ? { ...product, amount: newAmount } : product
-      )
-    );
+  const putProduct = async (updatedProduct) => {
+    await axios.put(`${url}/${updatedProduct.id}`, updatedProduct);
+    getProducts();
   };
 
   return (
@@ -48,7 +40,6 @@ const ProductList = () => {
               product={product}
               putProduct={putProduct}
               deleteProduct={deleteProduct}
-              updateProductAmount={updateProductAmount}
             />
           ))}
         </div>
