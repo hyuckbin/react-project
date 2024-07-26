@@ -66,7 +66,7 @@ const UpdateProduct = () => {
                 onChange={(e) =>
                   setUpdatedProduct({
                     ...updatedProduct,
-                    amount: e.target.value,
+                    amount: Number(e.target.value),
                   })
                 }
               />
