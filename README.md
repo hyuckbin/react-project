@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Product Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://umutproductmanagement.netlify.app/
 
-## Available Scripts
+## Project Purpose
 
-In the project directory, you can run:
+The primary objective of this project is to develop a comprehensive product management system that allows users to add, edit, delete, and view products. This project aims to enhance my skills in React, `React Router`, `Axios`, and `modular CSS` by implementing `CRUD operations` and `navigating between different pages`.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+|--Product_Management_App(folder)
+|
+├── public
+│     └── index.html
+├── src
+│    
+│    ├── assets
+│    │       └──  [images] 
+│    │
+│    ├── components
+│    │       ├── AboutContainer.jsx
+│    │       ├── AboutContainer.module.css
+│    │       └── MyNavbar.jsx
+│    │       └── MyNavbar.module.css
+│    │       └── ProductCard.jsx
+│    │       └── ProductCard.module.css
+│    │       └── ProductForm.jsx
+│    │       └── ProductForm.module.css
+│    │       └── TotalCard.jsx
+│    ├── pages
+│    │       ├── About.jsx
+│    │       ├── About.module.css
+│    │       └── Home.jsx
+│    │       └── Home.module.css
+│    │       └── NewProduct.jsx
+│    │       └── ProductList.jsx
+│    │       └── ProductList.module.css
+│    │       └── UpdateProduct.jsx
+│    │       └── UpdateProduct.module.css
+│    ├── pages
+│    │       └── AppRouter.jsx
+│    │       
+│    ├── App.js
+│    ├── index.js
+│    └── index.css
+│
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Project Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Add Products**: Users can add new products with a name, price, quantity, and image URL.
+- **Edit Products**: Users can edit existing products by clicking on the product image.
+- **Delete Products**: Users can delete products from the list.
+- **Update Product Quantity**: Users can change the quantity of products.
+- **React Router**: Implemented for navigating between different pages (Add Product, Edit Product, Home).
+- **Modular CSS**: Used `module.css` files to apply scoped styles to components.
+- **Axios**: Used for making GET, POST, PUT, and DELETE requests to a mock API.
+- **Responsive Design**: The app is styled using CSS to ensure it is responsive and user-friendly.
 
-### `npm run build`
+## Outcome
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
+- **HTML**: Used for structuring the content and layout of the application.
+- **CSS**: Employed for styling and enhancing the visual aspects of the app.
+- **ReactJS**: Utilized for building the user interface. Key React features include:
+  - State management using React hooks
+  - Event handling (`onClick`, `onChange`)
+  - Routing using `React Router`
+- **Axios**: Used for making HTTP requests to the `mock API`.
+  - **GET**: Retrieve the list of products from the mock API.
+  - **POST**: Add a new product to the mock API.
+  - **PUT**: Update an existing product in the mock API.
+  - **DELETE**: Remove a product from the mock API.
+- **React Bootstrap**: Used for responsive design and UI components.
+- **Modular CSS**: Utilized `module.css` files for component-level styling.
+ 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### At the end of the project, will be able to;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project has significantly enhanced my understanding and mastery of React state management, routing with React Router, handling HTTP requests with Axios, and applying modular CSS. By developing the "Product Management System" application, I have gained practical experience in:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Managing state with React hooks in a scalable application.
+- Navigating between different views using React Router.
+- Performing `CRUD` operations with Axios to interact with a mock API.
+- Implementing modular CSS for scoped component styles.
 
-## Learn More
+These skills are essential for developing more complex and user-interactive applications in the future.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center"> 💻 Happy Coding! 🛠️ </p>
