@@ -7,19 +7,21 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .productForm {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 50%;
+  padding: 2rem;
 }
 
 .formContainer {
   padding: 2rem;
-  /* width: 30rem;
-  height: 40rem; */
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.3);
 
@@ -43,4 +45,15 @@
 
 .formContainer button:hover {
   background-color: #e6b78b;
+}
+
+@media (max-width: 768px) {
+  .productForm {
+    height: auto;
+    padding: 5rem 2rem;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
 }
