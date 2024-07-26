@@ -1,52 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
-import React, { useReducer, useEffect } from "react";
 
 const ProductCard = ({ product, putProduct, deleteProduct }) => {
   const { name, price, amount, id, image } = product;
 
   const navigate = useNavigate();
 
-  const initialState = {
-    amount: amount || 1,
-    price: price,
-    totalPrice: price * (amount || 1),
-  };
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case "inc":
-        return {
-          ...state,
-          amount: state.amount + 1,
-          totalPrice: (state.amount + 1) * state.price,
-        };
-      case "dec":
-        return state.amount > 1
-          ? {
-              ...state,
-              amount: state.amount - 1,
-              totalPrice: (state.amount - 1) * state.price,
-            }
-          : state;
-      default:
-        return state;
+  const handleMinus = async () => {
+    if (amount > 1) {
+      await putProduct({ ...product, amount: amount - 1 });
+    } else {
+      const confirmDelete = window.confirm(
+        "Are you sure you want to delete this item?"
+      );
+      if (confirmDelete) {
+        deleteProduct();
+      }
     }
-  }
-
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  const inc = () => {
-    dispatch({ type: "inc" });
   };
 
-  const dec = () => {
-    dispatch({ type: "dec" });
+  const handlePlus = async () => {
+    await putProduct({ ...product, amount: amount + 1 });
   };
-
-  useEffect(() => {
-    putProduct({ ...product, amount: state.amount });
-  }, [state.amount]);
 
   return (
     <div className={styles.cardContainer}>
@@ -59,14 +34,14 @@ const ProductCard = ({ product, putProduct, deleteProduct }) => {
         <h3>{name}</h3>
         <p className={styles.price}>{price}</p>
         <div className={styles.amountContainer}>
-          <button onClick={dec}>-</button>
-          <p>{Number(state.amount)}</p>
-          <button onClick={inc}>+</button>
+          <button onClick={handleMinus}>-</button>
+          <p>{amount}</p>
+          <button onClick={handlePlus}>+</button>
         </div>
         <button className={styles.remove} onClick={() => deleteProduct(id)}>
           REMOVE
         </button>
-        <p className={styles.total}>Product Total: {state.totalPrice}</p>
+        <p className={styles.total}>Product Total: {amount * price} </p>
       </div>
     </div>
   );
