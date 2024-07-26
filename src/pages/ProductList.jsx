@@ -43,7 +43,7 @@ const ProductList = () => {
             />
           ))}
         </div>
-        <TotalCard products={products} />
+        <TotalCard products={products} className={styles.totalCard} />
       </div>
     </div>
   );
