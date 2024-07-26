@@ -21,6 +21,7 @@ const ProductForm = ({ postProduct, getProducts }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postProduct(newProduct);
+    getProducts();
     navigate("/productlist");
     setNewProduct(initialState);
   };

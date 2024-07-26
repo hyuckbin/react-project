@@ -8,19 +8,19 @@ const ProductCard = ({ product, putProduct, deleteProduct }) => {
 
   const handleMinus = async () => {
     if (amount > 1) {
-      await putProduct({ ...product, amount: amount - 1 });
+      await putProduct({ ...product, amount: Number(amount - 1) });
     } else {
       const confirmDelete = window.confirm(
         "Are you sure you want to delete this item?"
       );
       if (confirmDelete) {
-        deleteProduct();
+        deleteProduct(id);
       }
     }
   };
 
   const handlePlus = async () => {
-    await putProduct({ ...product, amount: amount + 1 });
+    await putProduct({ ...product, amount: Number(amount + 1) });
   };
 
   return (
@@ -35,7 +35,7 @@ const ProductCard = ({ product, putProduct, deleteProduct }) => {
         <p className={styles.price}>{price}</p>
         <div className={styles.amountContainer}>
           <button onClick={handleMinus}>-</button>
-          <p>{amount}</p>
+          <p>{Number(amount)}</p>
           <button onClick={handlePlus}>+</button>
         </div>
         <button className={styles.remove} onClick={() => deleteProduct(id)}>
