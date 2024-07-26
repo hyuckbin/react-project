@@ -7,11 +7,23 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  height: 50vh;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    height: auto;
+    padding: 5rem;
+  }
 }
