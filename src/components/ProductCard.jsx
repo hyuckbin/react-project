@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 import React, { useReducer, useEffect } from "react";
 
 const ProductCard = ({ product, putProduct, deleteProduct }) => {
   const { name, price, amount, id, image } = product;
+
+  const navigate = useNavigate();
 
   const initialState = {
     amount: amount || 1,
@@ -47,7 +50,11 @@ const ProductCard = ({ product, putProduct, deleteProduct }) => {
 
   return (
     <div className={styles.cardContainer}>
-      <img src={image} alt="productImage" />
+      <img
+        onClick={() => navigate("/UpdateProduct", { state: product })}
+        src={image}
+        alt="productImage"
+      />
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p className={styles.price}>{price}</p>
