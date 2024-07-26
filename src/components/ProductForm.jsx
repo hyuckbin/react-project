@@ -18,7 +18,8 @@ const ProductForm = ({ postProduct, getProducts }) => {
 
   const [newProduct, setNewProduct] = useState(initialState);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     postProduct(newProduct);
     navigate("/productlist");
     setNewProduct(initialState);
