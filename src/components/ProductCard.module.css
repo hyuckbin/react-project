@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 40% 60%;
   color: #333;
+  transition: all 0.3s ease;
 }
 
 .cardContainer img {
@@ -21,6 +22,8 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .productInfo h3 {
@@ -81,4 +84,63 @@
 .total::after {
   content: "€";
   margin-left: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .cardContainer img {
+    height: 25rem;
+  }
+
+  .productInfo h3 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+  }
+
+  .amountContainer p {
+    font-size: 1rem;
+  }
+
+  .remove,
+  .total {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 1rem;
+  }
+
+  .cardContainer img {
+    height: 25rem;
+  }
+
+  .productInfo h3 {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+
+  .amountContainer p {
+    font-size: 0.9rem;
+  }
+
+  .remove,
+  .total {
+    font-size: 0.9rem;
+  }
 }
