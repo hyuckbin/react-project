@@ -1,0 +1,46 @@
+.container {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
+    url("../assets/img3.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.productForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.formContainer {
+  padding: 2rem;
+  /* width: 30rem;
+  height: 40rem; */
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.formContainer button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  border: none;
+
+  background-color: #ffd0a4;
+  color: #5d4037;
+
+  transition: all 0.5s;
+}
+
+.formContainer button:hover {
+  background-color: #e6b78b;
+}
