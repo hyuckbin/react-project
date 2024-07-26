@@ -2,13 +2,24 @@ import styles from "./UpdateProduct.module.css";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import MyNavbar from "../components/MyNavbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const UpdateProduct = () => {
   const { state: product } = useLocation();
 
   const [updatedProduct, setUpdatedProduct] = useState(product);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.put(
+      `https://66a2170f967c89168f1eb98b.mockapi.io/products/${updatedProduct.id}`,
+      updatedProduct
+    );
+    navigate(-1);
+  };
 
   return (
     <div className={styles.container}>
@@ -82,7 +93,9 @@ const UpdateProduct = () => {
               />
             </InputGroup>
           </Form>
-          <button type="submit">Save To New Product</button>
+          <button type="submit" onClick={handleSubmit}>
+            Save To New Product
+          </button>
         </div>
       </section>
     </div>
