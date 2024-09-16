@@ -65,6 +65,7 @@ The primary objective of this project is to develop a comprehensive product mana
 
 ## Outcome
 
+![Product Management App](https://github.com/user-attachments/assets/228a8734-fff7-4eee-b5cf-6a6a06e4006e)
 
 
 
@@ -77,10 +78,10 @@ The primary objective of this project is to develop a comprehensive product mana
   - Event handling (`onClick`, `onChange`)
   - Routing using `React Router`
 - **Axios**: Used for making HTTP requests to the `mock API`.
-  - **GET**: Retrieve the list of products from the mock API.
-  - **POST**: Add a new product to the mock API.
-  - **PUT**: Update an existing product in the mock API.
-  - **DELETE**: Remove a product from the mock API.
+  - **`GET`**: Retrieve the list of products from the mock API.
+  - **`POST`**: Add a new product to the mock API.
+  - **`PUT`**: Update an existing product in the mock API.
+  - **`DELETE`**: Remove a product from the mock API.
 - **React Bootstrap**: Used for responsive design and UI components.
 - **Modular CSS**: Utilized `module.css` files for component-level styling.
 
