@@ -4,12 +4,14 @@
   overflow: hidden;
   margin-bottom: 1rem;
   width: 30rem;
-  height: 15rem;
+  height: auto;
 
   display: grid;
   grid-template-columns: 40% 60%;
   color: #333;
   transition: all 0.3s ease;
+
+  padding-top: 80px;
 }
 
 .cardContainer img {
@@ -143,4 +145,17 @@
   .total {
     font-size: 0.9rem;
   }
+}
+
+.category {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 1rem;
 }

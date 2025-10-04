@@ -14,6 +14,8 @@ const ProductForm = ({ postProduct, getProducts }) => {
     amount: 0,
     image: "",
     dampingRate: 0.8,
+    description: "", 
+    category: "",    
   };
 
   const [newProduct, setNewProduct] = useState(initialState);
@@ -73,7 +75,33 @@ const ProductForm = ({ postProduct, getProducts }) => {
                 required
               />
             </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label className="text-white">Product Description</Form.Label>
+              <Form.Control
+                as="textarea" // 긴 글을 위해 textarea 사용
+                rows={3}
+                placeholder="Please enter product description"
+                value={newProduct.description}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, description: e.target.value })
+                }
+                required
+              />
+            </Form.Group>
 
+            <Form.Group className="mb-4">
+              <Form.Label className="text-white">Product Category</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Please enter product category (e.g., electronics, books)"
+                value={newProduct.category}
+                onChange={(e) =>
+                  setNewProduct({ ...newProduct, category: e.target.value })
+                }
+                required
+              />
+            </Form.Group>
+            
             <Form.Label className="text-white" htmlFor="basic-url">
               Product Image
             </Form.Label>

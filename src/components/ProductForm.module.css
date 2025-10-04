@@ -18,6 +18,7 @@
   align-items: center;
   height: 50%;
   padding: 2rem;
+  padding-top: 300px;
 }
 
 .formContainer {
@@ -33,18 +34,19 @@
 
 .formContainer button {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
+  padding: 10px 20px; 
   border-radius: 0.6rem;
   border: none;
+  cursor: pointer; 
 
-  background-color: #ffd0a4;
-  color: #5d4037;
+  background-color: #1abc9c; 
+  color: white; 
 
-  transition: all 0.5s;
+  transition: background-color 0.3s ease; 
 }
 
 .formContainer button:hover {
-  background-color: #e6b78b;
+  background-color: #16a085; 
 }
 
 @media (max-width: 768px) {

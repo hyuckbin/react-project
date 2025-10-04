@@ -1,52 +1,52 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
-import styles from "./ProductList.module.css";
-import MyNavbar from "../components/MyNavbar";
-import TotalCard from "../components/TotalCard";
+  import axios from "axios";
+  import { useEffect, useState } from "react";
+  import ProductCard from "../components/ProductCard";
+  import styles from "./ProductList.module.css";
+  import MyNavbar from "../components/MyNavbar";
+  import TotalCard from "../components/TotalCard";
 
-const url = "https://66a2170f967c89168f1eb98b.mockapi.io/products";
+  const url = "https://68db330023ebc87faa323a6c.mockapi.io/users";
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const ProductList = () => {
+    const [products, setProducts] = useState([]);
 
-  const getProducts = async () => {
-    const { data } = await axios.get(url);
-    setProducts(data);
-  };
+    const getProducts = async () => {
+      const { data } = await axios.get(url);
+      setProducts(data);
+    };
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+    useEffect(() => {
+      getProducts();
+    }, []);
 
-  const deleteProduct = async (id) => {
-    await axios.delete(`${url}/${id}`);
-    getProducts();
-  };
+    const deleteProduct = async (id) => {
+      await axios.delete(`${url}/${id}`);
+      getProducts();
+    };
 
-  const putProduct = async (updatedProduct) => {
-    await axios.put(`${url}/${updatedProduct.id}`, updatedProduct);
-    getProducts();
-  };
+    const putProduct = async (updatedProduct) => {
+      await axios.put(`${url}/${updatedProduct.id}`, updatedProduct);
+      getProducts();
+    };
 
-  return (
-    <div className={styles.container}>
-      <MyNavbar />
-      <div className={styles.wrapper}>
-        <div className={styles.cards}>
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              putProduct={putProduct}
-              deleteProduct={deleteProduct}
-            />
-          ))}
+    return (
+      <div className={styles.container}>
+        <MyNavbar />
+        <div className={styles.wrapper}>
+          <div className={styles.cards}>
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                putProduct={putProduct}
+                deleteProduct={deleteProduct}
+              />
+            ))}
+          </div>
+          <TotalCard products={products} className={styles.totalCard} />
         </div>
-        <TotalCard products={products} className={styles.totalCard} />
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default ProductList;
+  export default ProductList;

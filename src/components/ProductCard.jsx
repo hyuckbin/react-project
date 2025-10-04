@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product, putProduct, deleteProduct }) => {
-  const { name, price, amount, id, image } = product;
+  const { name, price, amount, id, image, description, category } = product;
 
   const navigate = useNavigate();
 
@@ -32,6 +32,8 @@ const ProductCard = ({ product, putProduct, deleteProduct }) => {
       />
       <div className={styles.productInfo}>
         <h3>{name}</h3>
+        <p className={styles.category}>{category}</p> {}
+        <p className={styles.description}>{description}</p> {}
         <p className={styles.price}>{price}</p>
         <div className={styles.amountContainer}>
           <button onClick={handleMinus}>-</button>

@@ -1,7 +1,7 @@
 .navbar {
   padding: 0.5rem 2rem;
   font-size: 1.2rem;
-  color: #fff;
+  background-color: #b4eca9;
 }
 
 .navlink {
@@ -13,4 +13,16 @@
 .navlin:active {
   border-radius: 0.5rem;
   color: #ffcb9a !important;
+}
+.category {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 1rem;
 }
