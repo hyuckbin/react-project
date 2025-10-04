@@ -62,7 +62,7 @@ const UpdateProduct = () => {
                 type="number"
                 placeholder="0"
                 required
-                value={updatedProduct.amount}
+                v alue={updatedProduct.amount}
                 onChange={(e) =>
                   setUpdatedProduct({
                     ...updatedProduct,

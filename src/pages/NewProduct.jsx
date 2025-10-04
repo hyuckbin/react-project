@@ -3,7 +3,7 @@ import ProductForm from "../components/ProductForm";
 import axios from "axios";
 
 const NewProduct = () => {
-  const url = "https://66a2170f967c89168f1eb98b.mockapi.io/products";
+  const url = "https://68db330023ebc87faa323a6c.mockapi.io/users";
 
   const [products, setProducts] = useState([]);
 
